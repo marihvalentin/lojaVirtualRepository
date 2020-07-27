@@ -1,0 +1,21 @@
+[AULA 5]
+
+Nesta aula, aprendemos que:
+
+   - É boa prática usar um pool de conexões
+   - Um pool de conexões administra/controla a quantidade de conexões abertas
+       > Normalmente tem um mínimo e máximo de conexões
+   - Como existe uma interface que representa a conexão (java.sql.Connection), também existe uma interface que representa o pool de conexões (javax.sql.DataSource)
+   - C3PO é uma implementação Java de um pool de conexão
+
+
+Imagine uma aplicação onde só existe um único cliente e ele só pode executar uma tarefa por vez. Enquanto uma tarefa não acaba, ele não pode executar outra tarefa. 
+Qual abordagem você usaria?
+> Abrir uma única conexão e mantê-la aberta o tempo todo
+> Abrir uma conexão a cada nova tarefa que o usuário fizer
+
+Em um cenário onde diversos clientes podem acessar uma mesma aplicação simultaneamente, qual a abordagem mais apropriada?
+> Reciclar um conjunto de conexões de tamanho fixo ou dinâmico (Essa é a abordagem do pool de conexão. Vamos abrir uma quantidade de conexões e reaproveitá-las.)
+
+Em um pool simples, com 9 conexões e todas elas ocupadas, o que acontece quando o 10º usuário se conecta?
+ > O 10º usuário esperará alguma das 9 conexões ficar disponível
