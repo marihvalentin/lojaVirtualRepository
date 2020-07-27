@@ -1,7 +1,6 @@
-package com.company;
+package br.com.company.jdbc;
 
-import com.company.jdbc.factory.ConnectionFactory;
-
+import br.com.company.jdbc.factory.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

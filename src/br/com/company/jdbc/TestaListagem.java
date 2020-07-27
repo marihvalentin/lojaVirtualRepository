@@ -1,6 +1,6 @@
-package com.company;
-import com.company.jdbc.factory.ConnectionFactory;
+package br.com.company.jdbc;
 
+import br.com.company.jdbc.factory.ConnectionFactory;
 import java.sql.*;
 
 public class TestaListagem
