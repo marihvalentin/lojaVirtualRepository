@@ -1,0 +1,16 @@
+[AULA 4]
+
+Nesta aula, aprendemos que:
+
+   - O banco de dados oferece um recurso chamado de transação, para juntar várias alterações como unidade de trabalho
+       > Se uma alteração falha, nenhuma alteração é aplicada (é feito um rollback da transação)
+       > Todas as alterações precisam funcionar para serem aceitas (é feito um commit)
+   - commit e rollback são operações clássicas de transações
+   - Para garantir o fechamento dos recursos, existe no Java uma cláusula try-with-resources
+       > O recurso em questão deve usar a interface Autoclosable
+
+
+	O Auto-Commit é o padrão JDBC utilizado para lidar com transações e o Banco de Dados. O mesmo pode ser alterado pelo método
+	setAutoClose, da interface Connection para false, por exemplo (para que assim o JDBC não controle mais as transações).
+	Para garantir o controle total das transações, é necessário explicitar o commit e o rollback
+
