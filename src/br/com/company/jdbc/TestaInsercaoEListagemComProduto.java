@@ -3,7 +3,6 @@ package br.com.company.jdbc;
 import br.com.company.jdbc.dao.ProdutoDAO;
 import br.com.company.jdbc.factory.ConnectionFactory;
 import br.com.company.jdbc.modelo.Produto;
-
 import java.sql.*;
 import java.util.List;
 
