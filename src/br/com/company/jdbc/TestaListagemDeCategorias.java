@@ -1,7 +1,6 @@
 package br.com.company.jdbc;
 
 import br.com.company.jdbc.dao.CategoriaDAO;
-import br.com.company.jdbc.dao.ProdutoDAO;
 import br.com.company.jdbc.factory.ConnectionFactory;
 import br.com.company.jdbc.modelo.Categoria;
 import br.com.company.jdbc.modelo.Produto;
@@ -17,18 +16,14 @@ public class TestaListagemDeCategorias
         try(Connection connection = new ConnectionFactory().recuperarConexao())
         {
             CategoriaDAO categoriaDAO = new CategoriaDAO(connection);
-            List<Categoria> listaCategorias = categoriaDAO.listar();
+            List<Categoria> listaCategorias = categoriaDAO.listarComProdutos();
             listaCategorias.stream().forEach(ct -> {
                 System.out.println(ct.getNome());
                 try {
-                    for (Produto produto : new ProdutoDAO(connection).buscar(ct))
-                    {
+                    for (Produto produto : ct.getProdutos()) {
                         System.out.println(ct.getNome() + " - " + produto.getNome());
                     }
-                } catch (SQLException e)
-                {
-                    e.printStackTrace();
-                }
+                } finally {}
             });
 
         }
